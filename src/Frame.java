@@ -27,6 +27,7 @@ public class Frame extends JFrame {
         g.drawLine(-s.width /2, 0, s.width/2, 0);// оси
         g.drawLine(0, -s.height/2, 0, s.height/2);
         g.setColor(Color.BLACK); // смена цвета
+
         convex.draw(g);// прорисовка точек всех (использование Дро)
     }
 }

@@ -22,7 +22,7 @@ public class Segment  implements Figure {
     @Override
     public void draw(Graphics g) {
         g.fillOval((int)(p.x - 3), ((int)(p.y - 3)),6,6);
-        g.drawLine((int)p.x, ((int)p.y), (int)q.x, ((int)q.y));
+        g.drawLine((int)(p.x), (int)(p.y), (int)(q.x), (int)(q.y));
         g.fillOval((int)(q.x - 3), ((int)(q.y - 3)),6,6);
 
     }

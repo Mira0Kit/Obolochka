@@ -2,6 +2,7 @@ import java.awt.*;
 
 public class Polygon extends Deq implements Figure {
     private double s, p;
+    public int minX=10000, minY=10000, maxX=-10000, maxY=-10000;
 
     private void grow(R2Point a, R2Point b, R2Point t) {
         p -= R2Point.dist(a, b);
@@ -14,8 +15,7 @@ public class Polygon extends Deq implements Figure {
         } else {
             pushFront(c); pushBack(a);
         }
-        p = R2Point.dist(a, b) + R2Point.dist(b, c)
-                + R2Point.dist(c, a);
+        p = R2Point.dist(a, b) + R2Point.dist(b, c) + R2Point.dist(c, a);
         s = Math.abs(R2Point.area(a, b, c));
     }
     public double perimeter() {
@@ -53,11 +53,30 @@ public class Polygon extends Deq implements Figure {
     public void draw(Graphics g) {
         for (int i=length(); i>0; i--) // прорисовывает все точки
         {
+
             g.fillOval((int)(front().x - 3), ((int)(front().y - 3)),6,6);
             g.drawLine((int)front().x, ((int)front().y), (int)back().x, ((int)back().y));
             pushFront(popBack());
 
-            g.setColor(Color.BLACK);
+
+
+            if (front().x < minX) {
+                minX = (int)front().x - 4 ;
+            }
+            if (front().y < minY) {
+            minY = (int)front().y - 4;
+            }
+            if (front().x > maxX) {
+                maxX = (int)front().x + 4;
+            }
+            if (front().y > maxY) {
+                maxY = (int)front().y + 4;
+            }
         }
+
+            g.setColor(Color.red);
+            g.drawRect(minX , minY , maxX-minX, maxY-minY);
+
+
     }
 }
