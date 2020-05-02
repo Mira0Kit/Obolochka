@@ -52,13 +52,14 @@ public class Polygon extends Deq implements Figure {
     public Figure add(R2Point t) {
         int i;
     // Ищем освещенные ребра, просматривая их одно за другим.
-        for (i=length(); i>0 && !t.light(back(),front()); i--)
+        for (i=length(); i>0 && !t.light(back(),front()); i--) //если ребра не освещены, просто просматриваем
             pushBack(popFront());
     // УТВЕРЖДЕНИЕ: либо ребро [back(),front()] освещено из t,
     // либо освещенных ребер нет совсем.
-        if (i>0) {
+        if (i>0)
+        {
             R2Point x;
-            grow(back(), front(), t);
+            grow(back(), front(), t); //если есть освещенное, уменьшаем периметр, увеличиваем площадь
     // Удаляем все освещенные ребра из начала дека.
             for (x = popFront(); t.light(x, front()); x = popFront())
                 grow(x, front(), t );
@@ -68,7 +69,7 @@ public class Polygon extends Deq implements Figure {
                 grow(back(), x, t);
             pushBack(x);
     // Завершаем обработку добавляемой точки.
-            p += R2Point.dist(back(), t) + R2Point.dist(t, front());
+            p += R2Point.dist(back(), t) + R2Point.dist(t, front()); //добавляем к оболочке сумму длин ребер
             pushFront(t);
         }
 

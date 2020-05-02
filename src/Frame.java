@@ -19,7 +19,7 @@ public class Frame extends JFrame {
 
     public void paint(Graphics g)
     {
-        Rectangle s = this.getBounds(); // использование размеров окна динамически
+        Rectangle s = this.getBounds(); // использование размеров окна динамически //getBounds возвращает ограничивающий сложную фигуру четырехугольник
         g.setColor(backgroundColor);
         g.translate(s.width/2, s.height/2); // Начало координат в центр
         g.fillRect(-s.width/2, -s.height/2, s.width, s.height);// фон

@@ -2,6 +2,7 @@ public class Deq {
     private final static int DEFSIZE = 16;
     private R2Point[] array;
     private int size, head, tail;
+
     private int forward(int index) {
         return ++index < array.length ? index : 0;
     }
