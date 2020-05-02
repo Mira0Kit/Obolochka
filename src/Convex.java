@@ -19,6 +19,14 @@ public class Convex {
         return fig.perimeter();
     }
 
+    public double areaRect() {
+        return fig.areaRect();
+    }
+
+    public double perimeterRect() {
+        return fig.perimeterRect();
+    }
+
     public void draw(Graphics g) {
         fig.draw(g);
     }

@@ -19,21 +19,21 @@ public class Deq {
     public int length() {
         return size;
     }
-    public void pushFront(R2Point p) {
+    public void pushFront(R2Point p) { //добавление элемента в начало
         array[head=backward(head)] = p;
         size += 1;
     }
-    public void pushBack(R2Point p) {
+    public void pushBack(R2Point p) { //добавление элемента в конец
         array[tail=forward(tail)] = p;
         size += 1;
     }
-    public R2Point popFront() {
+    public R2Point popFront() { //удаление первого элемента
         R2Point p = front();
         head = forward(head);
         size -= 1;
         return p;
     }
-    public R2Point popBack() {
+    public R2Point popBack() { //удаление последнего элемента
         R2Point p = back();
         tail = backward(tail);
         size -= 1;

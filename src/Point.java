@@ -12,6 +12,10 @@ public class Point implements Figure {
     public double area() {
         return 0.0;
     }
+
+    public double perimeterRect() { return 0.0; }
+    public double areaRect() { return 0.0; }
+
     public Figure add(R2Point q) {
         if (!R2Point.equal(p,q)) return new Segment(p, q);
         else return this;

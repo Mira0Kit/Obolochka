@@ -5,4 +5,6 @@ public interface Figure {
     public double area();
     public Figure add(R2Point p);
     public void draw(Graphics g);  // методд draw
+    public double perimeterRect();
+    public double areaRect();
 }

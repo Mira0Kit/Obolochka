@@ -12,7 +12,7 @@ public class R2Point {
     public R2Point() throws Exception {
         Scanner a=new Scanner(System.in);
         System.out.println("x-> ");
-        x =a.nextDouble();
+        x = a.nextDouble();
         System.out.println("y-> ");
         y = a.nextDouble();  // получение x,y
         y *= -1; //для оси по y
@@ -24,6 +24,14 @@ public class R2Point {
 
     public static double area(R2Point a, R2Point b, R2Point c) {
         return 0.5 * ((a.x - c.x) * (b.y - c.y) - (a.y - c.y) * (b.x - c.x));
+    }
+
+    public static double perimeterRect(R2Point a, R2Point b) {
+        return 2.0 * ((Math.abs(a.x) + Math.abs(b.x)) + (Math.abs(b.y) + Math.abs(a.y)));
+    }
+
+    public static double areaRect(R2Point a, R2Point b) {
+        return ((Math.abs(a.x) + Math.abs(b.x)) * (Math.abs(b.y) + Math.abs(a.y)));
     }
 
     public static boolean equal(R2Point a, R2Point b) {
